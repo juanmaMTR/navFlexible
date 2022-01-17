@@ -21,10 +21,12 @@
         <header>
             <h1>Inicio Sesión</h1>
         </header>
-        <nav id="horizontal">
+        <nav id="horizontalsesion">
             <ul>
                 <?php
                     if(isset($_SESSION['nombreUsuario'])){
+                        echo '<li><a>Inicio</a></li>';
+                        echo '<li><a>¿Quiénes somos?</a></li>';
                         echo '<li><a>Gestión de Empleados</a></li>';
                         echo '<li><a href="'.$operaciones->cerrarSesion().'">Cerrar Sesión</a></li>';
                     }
@@ -43,7 +45,7 @@
                 <p>Introduzca sus credenciales</p>
                 <form action="#" method="POST">
                     Usuario: <input type="text" id="usuario" name="usuario" /><br>
-                    Contraseña: <input type="text" id="contraseña" name="contraseña" /><br>
+                    Contraseña: <input type="password" id="contraseña" name="contraseña" /><br>
                     <input type="submit" id="enviar" name="Enviar" />
                 </form>
                 <?php
